@@ -43,7 +43,7 @@
                 name: "membership certificate",
                 logo: "image/certificat.jpeg",
                 date: "2024/2025",
-                link: "http://127.0.0.1:5500/image.html"
+                link: "https://drive.google.com/file/d/1LUo67QNA_9TXp8IFARnOxoz46a_uciUi/view?usp=sharing"
             },
             {
                 name: "Plan and prepare to develop AI solutions on Azure",
