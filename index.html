@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <div class="home-container">
+            <h1>👋 Welcome!</h1>
+            <p>Explore my professional certifications and achievements</p>
+            <div class="button-group">
+                <button class="main-button btn-primary" onclick="showPage('certPage')">
+                    📜 View Certifications
+                </button>
+                <button class="main-button btn-admin" onclick="showPage('adminPage')">
+                    🔒 Admin
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- CERTIFICATIONS PAGE -->
+    <div id="certPage" class="page cert-page">
+        <div class="page-header">
+            <button class="back-button" onclick="showPage('homePage')">← Back to Home</button>
+            <h1>My Certifications</h1>
+            <p>Professional Achievements & Skills</p>
+        </div>
+        
+        <div id="certificationsGrid" class="certifications-grid">
+            <!-- Certifications will be loaded here -->
+        </div>
+    </div>
+    
+    <!-- ADMIN PAGE -->
+    <div id="adminPage" class="page admin-page">
+        <div class="page-header">
+            <button class="back-button" onclick="showPage('homePage')">← Back to Home</button>
+            <h1>Admin Panel</h1>
+        </div>
+        
+        <!-- Login Box -->
+        <div id="loginBox" class="login-box">
+            <h2>🔐 Admin Login</h2>
+            <input type="password" id="passwordInput" placeholder="Enter admin password" onkeypress="handleKeyPress(event)">
+            <button onclick="login()">Login</button>
+            <p id="loginError" style="color: red; margin-top: 15px;"></p>
+        </div>
+        
+        <!-- Admin Panel (hidden until login) -->
+        <div id="adminPanel" class="admin-panel" style="display: none;">
+            <h2>➕ Add New Certification</h2>
+            <div id="adminMessage"></div>
+            
+            <form id="certForm" onsubmit="addCertification(event)">
+                <div class="form-group">
+                    <label>Certification Name:</label>
+                    <input type="text" id="certName" required placeholder="e.g., Microsoft Azure Fundamentals">
+                </div>
+                
+                <div class="form-group">
+                    <label>Logo URL (from Credly or Microsoft):</label>
+                    <input type="url" id="certLogo" required placeholder="https://images.credly.com/...">
+                </div>
+                
+                <div class="form-group">
+                    <label>Date Obtained:</label>
+                    <input type="text" id="certDate" required placeholder="e.g., January 2024">
+                </div>
+                
+                <div class="form-group">
+                    <label>Certificate Link:</label>
+                    <input type="url" id="certLink" required placeholder="https://learn.microsoft.com/...">
+                </div>
+                
+            <button type="button" class="submit-btn" onclick="addCertification()">Add Certification</button>            </form>
+            
+            <button class="back-button" style="margin-top: 30px;" onclick="logout()">Logout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
